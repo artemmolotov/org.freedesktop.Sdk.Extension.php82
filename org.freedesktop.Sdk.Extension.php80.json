@@ -160,8 +160,8 @@
             "name": "openssl",
             "config-opts": [
                 "enable-ec_nistp_64_gcc_128",
-                "--prefix=/usr/lib/sdk/php74",
-                "--openssldir=/usr/lib/sdk/php74/etc/pki/tls",
+                "--prefix=/usr/lib/sdk/php80",
+                "--openssldir=/usr/lib/sdk/php80/etc/pki/tls",
                 "shared",
                 "threads"
             ],
