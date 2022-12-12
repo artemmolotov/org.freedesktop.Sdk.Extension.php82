@@ -1,5 +1,5 @@
 {
-    "id": "org.freedesktop.Sdk.Extension.php80",
+    "id": "org.freedesktop.Sdk.Extension.php81",
     "branch": "20.08",
     "runtime": "org.freedesktop.Sdk",
     "sdk": "org.freedesktop.Sdk",
@@ -34,12 +34,12 @@
     "build-options": {
         "no-debuginfo": true,
         "strip": true,
-        "prefix": "/usr/lib/sdk/php80",
-        "prepend-path": "/usr/lib/sdk/php80/bin",
-        "prepend-ld-library-path": "/usr/lib/sdk/php80/lib",
-        "append-pkg-config-path": "/usr/lib/sdk/php80/lib/pkgconfig",
+        "prefix": "/usr/lib/sdk/php81",
+        "prepend-path": "/usr/lib/sdk/php81/bin",
+        "prepend-ld-library-path": "/usr/lib/sdk/php81/lib",
+        "append-pkg-config-path": "/usr/lib/sdk/php81/lib/pkgconfig",
         "env": {
-            "PHP_INI_DIR": "/usr/lib/sdk/php80/etc/php"
+            "PHP_INI_DIR": "/usr/lib/sdk/php81/etc/php"
         }
     },
     "modules": [
@@ -157,8 +157,8 @@
             "buildsystem": "autotools",
             "config-opts": [
                 "--enable-option-checking=fatal",
-                "--with-config-file-path=/usr/lib/sdk/php80/etc/php",
-                "--with-config-file-scan-dir=/usr/lib/sdk/php80/etc/php/conf.d:/app/etc/php:/var/config/php/8.0/ini",
+                "--with-config-file-path=/usr/lib/sdk/php81/etc/php",
+                "--with-config-file-scan-dir=/usr/lib/sdk/php81/etc/php/conf.d:/app/etc/php:/var/config/php/8.1/ini",
                 "--disable-cgi",
                 "--enable-bcmath",
                 "--enable-calendar",
@@ -186,13 +186,13 @@
                 "--with-ffi",
                 "--with-gettext",
                 "--with-gmp",
-                "--with-ldap=/usr/lib/sdk/php80",
+                "--with-ldap=/usr/lib/sdk/php81",
                 "--with-mhash",
                 "--with-mysqli",
                 "--with-openssl",
-                "--with-password-argon2=/usr/lib/sdk/php80",
+                "--with-password-argon2=/usr/lib/sdk/php81",
                 "--with-pdo-mysql",
-                "--with-pdo-pgsql=/usr/lib/sdk/php80",
+                "--with-pdo-pgsql=/usr/lib/sdk/php81",
                 "--with-pdo-sqlite",
                 "--with-pspell",
                 "--with-readline",
@@ -209,11 +209,11 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.php.net/distributions/php-8.0.26.tar.xz",
-                    "sha256": "0765bfbe640dba37ccc36d2bc7c7b7ba3d2c3381c9cd4305f66eca83e82a40b3",
+                    "url": "https://www.php.net/distributions/php-8.1.13.tar.xz",
+                    "sha256": "b15ef0ccdd6760825604b3c4e3e73558dcf87c75ef1d68ef4289d8fd261ac856",
                     "x-checker-data": {
                         "type": "json",
-                        "url": "https://www.php.net/releases/index.php?json&version=8.0&max=1",
+                        "url": "https://www.php.net/releases/index.php?json&version=8.1&max=1",
                         "version-query": "keys[0]",
                         "url-query": "\"https://www.php.net/distributions/php-\" + $version + \".tar.xz\"",
                         "is-main-source": true
@@ -225,7 +225,7 @@
             "name": "apcu",
             "buildsystem": "autotools",
             "config-opts": [
-                "--with-php-config=/usr/lib/sdk/php80/bin/php-config"
+                "--with-php-config=/usr/lib/sdk/php81/bin/php-config"
             ],
             "post-install": [
                 "install -Dm755 modules/apcu.so $(php -r 'echo ini_get(\"extension_dir\");')/apcu.so",
@@ -259,7 +259,7 @@
             "name": "xdebug",
             "buildsystem": "autotools",
             "config-opts": [
-                "--with-php-config=/usr/lib/sdk/php80/bin/php-config"
+                "--with-php-config=/usr/lib/sdk/php81/bin/php-config"
             ],
             "post-install": [
                 "install -Dm755 modules/xdebug.so $(php -r 'echo ini_get(\"extension_dir\");')/xdebug.so",
@@ -341,28 +341,28 @@
                     "type": "script",
                     "dest-filename": "install.sh",
                     "commands": [
-                        "install -Dm0755 /usr/lib/sdk/php80/bin/php ${FLATPAK_DEST}/php80/bin/php",
-                        "install -Dm0755 /usr/lib/sdk/php80/bin/phpdbg ${FLATPAK_DEST}/php80/bin/phpdbg",
-                        "install -Dm0755 /usr/lib/sdk/php80/bin/composer ${FLATPAK_DEST}/php80/bin/composer"
+                        "install -Dm0755 /usr/lib/sdk/php81/bin/php ${FLATPAK_DEST}/php81/bin/php",
+                        "install -Dm0755 /usr/lib/sdk/php81/bin/phpdbg ${FLATPAK_DEST}/php81/bin/phpdbg",
+                        "install -Dm0755 /usr/lib/sdk/php81/bin/composer ${FLATPAK_DEST}/php81/bin/composer"
                     ]
                 },
                 {
                     "type": "script",
                     "dest-filename": "install-sdk.sh",
                     "commands": [
-                        "cp -r /usr/lib/sdk/php80 ${FLATPAK_DEST}/php80"
+                        "cp -r /usr/lib/sdk/php81 ${FLATPAK_DEST}/php81"
                     ]
                 },
                 {
                     "type": "script",
                     "dest-filename": "enable.sh",
                     "commands": [
-                        "export PATH=$PATH:/usr/lib/sdk/php80/bin:/var/config/composer/vendor/bin"
+                        "export PATH=$PATH:/usr/lib/sdk/php81/bin:/var/config/composer/vendor/bin"
                     ]
                 },
                 {
                     "type": "file",
-                    "path": "org.freedesktop.Sdk.Extension.php80.metainfo.xml"
+                    "path": "org.freedesktop.Sdk.Extension.php81.metainfo.xml"
                 }
             ]
         }
