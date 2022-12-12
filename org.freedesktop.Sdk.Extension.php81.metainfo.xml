@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="addon">
-  <id>org.freedesktop.Sdk.Extension.php80</id>
+  <id>org.freedesktop.Sdk.Extension.php81</id>
   <extends>org.freedesktop.Sdk</extends>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>PHP-3.0 AND BSD-3-Clause AND MIT</project_license>
-  <name>PHP 8.0</name>
-  <summary>PHP 8.0 extension for the flatpak Freedesktop SDK</summary>
+  <name>PHP 8.1</name>
+  <summary>PHP 8.1 extension for the flatpak Freedesktop SDK</summary>
   <url type="homepage">https://php.net</url>
   <update_contact>matthew@stobbs.ca</update_contact>
   <description>
     <p>
-      This SDK extension allows you to build PHP 8.0 based applications, with built-in Composer support.
+      This SDK extension allows you to build PHP 8.1 based applications, with built-in Composer support.
     </p>
   </description>
   <releases>
-    <release version="8.0.26" date="2022-11-24"/>
+    <release version="8.1.13" date="2022-11-24"/>
   </releases>
 </component>
